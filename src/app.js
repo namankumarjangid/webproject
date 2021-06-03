@@ -15,23 +15,23 @@ hbs.registerPartials(partials_path);
 // console.log(static_path);
 app.use(express.static(static_path));
 
-app.get("", (req,res) =>{
+app.get("/", (req, res) => {
     res.render('index')
 })
 
-app.get("/about", (req,res) =>{
+app.get("/about", (req, res) => {
     res.render('about')
 })
 
 
-app.get("/weather", (req,res) =>{
+app.get("/weather", (req, res) => {
     res.render('weather')
 })
 
 
-app.get("*", (req,res) =>{
+app.get("*", (req, res) => {
     res.render('404page', {
-        errorMsg : "Opps! page not found, Click Here to go back"
+        errorMsg: "Opps! page not found, Click Here to go back"
     })
 })
 
